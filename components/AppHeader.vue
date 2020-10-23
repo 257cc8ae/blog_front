@@ -1,7 +1,80 @@
 <template>
   <header>
-    <div class="logo-area">
-      <span class="logo">The Lusaca Blog</span>
+    <div class="header-main">
+      <div class="logo-area">
+        <span class="logo">The Lusaca Blog</span>
+      </div>
+      <nav>
+        <ul>
+          <nuxt-link to="/">
+            <li>Home</li>
+          </nuxt-link>
+          <nuxt-link to="/">
+            <li>All Posts</li>
+          </nuxt-link>
+          <nuxt-link to="/">
+            <li>Tags</li>
+          </nuxt-link>
+          <nuxt-link to="/">
+            <li>About</li>
+          </nuxt-link>
+        </ul>
+      </nav>
     </div>
   </header>
 </template>
+
+<style lang="scss">
+header {
+  width: 100%;
+  height: 69px;
+  border-bottom: 1px solid #b5bdc4;
+
+  .header-main {
+    width: max-content;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+  }
+  .logo-area {
+    flex: 0 0 auto;
+    width: max-content;
+    height: 69px;
+    padding: 0 20px;
+    .logo {
+      font-family: var(--logo-font-family);
+      line-height: 69px;
+      font-size: 20px;
+      background: #b8050b;
+      color: #fff;
+      border-radius: 4px;
+      padding: 10px 20px;
+      font-weight: bold;
+    }
+  }
+  nav {
+    flex: 0 0 auto;
+    width: max-content;
+    ul {
+      display: flex;
+      margin: 0;
+      padding: 0 20px;
+      font-family: var(--logo-font-family);
+      a {
+        color: #000;
+        line-height: 69px;
+        text-decoration: none;
+        li {
+          flex: 0 0 auto;
+          list-style: none;
+          margin: 0 10px;
+          display: inline;
+          &:hover {
+            border-bottom: 2px solid var(--accent);
+          }
+        }
+      }
+    }
+  }
+}
+</style>
