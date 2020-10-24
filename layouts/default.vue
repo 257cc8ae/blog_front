@@ -2,6 +2,7 @@
   <div>
     <AppHeader />
     <Nuxt />
+    <AppFooter />
   </div>
 </template>
 
@@ -10,13 +11,14 @@
 :root {
   --logo-font-family: "IBM Plex Mono", monospace;
   --accent: #b8050b;
+  --sub-color: #959da5;
+  --border-color: #b5bdc4;
 }
 html,
 body {
   margin: 0;
-  background: #F9FAFA;
+  background: #f9fafa;
 }
-
 </style>
 
 <script lang="ts">
