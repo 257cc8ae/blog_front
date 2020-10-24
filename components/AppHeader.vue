@@ -29,6 +29,7 @@ header {
   width: 100%;
   height: 69px;
   border-bottom: 1px solid #b5bdc4;
+  background: #fff;
 
   .header-main {
     width: max-content;
@@ -58,7 +59,7 @@ header {
     ul {
       display: flex;
       margin: 0;
-      padding: 0 20px;
+      padding: 0 40px;
       font-family: var(--logo-font-family);
       a {
         color: #000;

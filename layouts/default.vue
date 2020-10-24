@@ -14,7 +14,9 @@
 html,
 body {
   margin: 0;
+  background: #F9FAFA;
 }
+
 </style>
 
 <script lang="ts">
