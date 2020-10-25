@@ -20,7 +20,9 @@
         </div>
       </div>
     </div>
-    <button class="lmp">Load More Posts</button>
+    <div v-if="next_page != null">
+      <button class="lmp" @click="loadPosts()">Load More Posts</button>
+    </div>
   </div>
 </template>
 
@@ -35,10 +37,9 @@
   border-radius: 4px;
   margin-top: 20px;
   h1 {
-      border-bottom: var(--border-color) dashed 1px;
-      display: inline-block;
-      font-size: 48px;
-
+    border-bottom: var(--border-color) dashed 1px;
+    display: inline-block;
+    font-size: 48px;
   }
   .post {
     border-bottom: var(--border-color) dashed 1px;
@@ -79,13 +80,13 @@
     font-size: 20px;
     margin-top: 20px;
     &:focus {
-        outline: none;
+      outline: none;
     }
   }
 }
 </style>
 
-<script lang="ts">
+<script>
 import Vue from "vue";
 export default Vue.extend({
   data() {
@@ -93,6 +94,19 @@ export default Vue.extend({
       posts: null,
       next_page: null,
     };
+  },
+  methods: {
+    loadPosts() {
+      fetch(`http://localhost:3000/posts?page=${this.next_page}`)
+        .then((response) => {
+          return response.json();
+        })
+        .then((json) => {
+          let now_posts = this.posts;
+          this.posts = now_posts.concat(json.posts);
+          this.next_page = json.next_page;
+        });
+    },
   },
   created() {
     fetch("http://localhost:3000/posts")
@@ -102,9 +116,6 @@ export default Vue.extend({
       .then((json) => {
         this.posts = json.posts;
         this.next_page = json.next_page;
-      })
-      .catch((err) => {
-        this.posts = null;
       });
   },
 });
