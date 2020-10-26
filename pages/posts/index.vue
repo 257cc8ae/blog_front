@@ -97,7 +97,7 @@ export default Vue.extend({
   },
   methods: {
     loadPosts() {
-      fetch(`http://the-lusaca-blog.herokuapp.com/posts?page=${this.next_page}`)
+      fetch(`https://the-lusaca-blog.herokuapp.com/posts?page=${this.next_page}`)
         .then((response) => {
           return response.json();
         })
@@ -109,7 +109,7 @@ export default Vue.extend({
     },
   },
   created() {
-    fetch("http://the-lusaca-blog.herokuapp.com/posts")
+    fetch("https://the-lusaca-blog.herokuapp.com/posts")
       .then((response) => {
         return response.json();
       })

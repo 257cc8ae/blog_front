@@ -88,7 +88,7 @@ export default Vue.extend({
     };
   },
   created() {
-    fetch("http://the-lusaca-blog.herokuapp.com")
+    fetch("https://the-lusaca-blog.herokuapp.com")
       .then((response) => {
         return response.json();
       })
