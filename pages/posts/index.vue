@@ -1,7 +1,7 @@
 <template>
   <div class="posts-index">
     <h1>All Posts</h1>
-    <div v-if="posts != null">
+    <div v-if="posts != null" class="posts">
       <div v-for="post in posts" :key="post.name">
         <div class="post">
           <div class="date">
@@ -97,7 +97,7 @@ export default Vue.extend({
   },
   methods: {
     loadPosts() {
-      fetch(`http://localhost:3000/posts?page=${this.next_page}`)
+      fetch(`http://the-lusaca-blog.herokuapp.com/posts?page=${this.next_page}`)
         .then((response) => {
           return response.json();
         })
@@ -109,7 +109,7 @@ export default Vue.extend({
     },
   },
   created() {
-    fetch("http://localhost:3000/posts")
+    fetch("http://the-lusaca-blog.herokuapp.com/posts")
       .then((response) => {
         return response.json();
       })
