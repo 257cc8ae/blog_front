@@ -74,7 +74,7 @@ export default {
   },
   methods: {
     loadTags() {
-      fetch(`http://localhost:3000/tags?page=${this.next_page}`)
+      fetch(`https://the-lusaca-blog.herokuapp.com/tags?page=${this.next_page}`)
         .then((response) => {
           return response.json();
         })
@@ -86,7 +86,7 @@ export default {
     },
   },
   created() {
-    fetch("http://localhost:3000/tags")
+    fetch("https://the-lusaca-blog.herokuapp.com/tags")
       .then((response) => {
         return response.json();
       })

@@ -43,7 +43,7 @@ export default {
     };
   },
   created() {
-    fetch(`http://localhost:3000/tags/${this.$route.params.id}`)
+    fetch(`https://the-lusaca-blog.herokuapp.com/tags/${this.$route.params.id}`)
       .then((response) => {
         return response.json();
       })
@@ -59,7 +59,7 @@ export default {
   },
   methods: {
     loadPosts() {
-      fetch(`http://localhost:3000/tags/${this.$route.params.id}?page=${this.next_page}`)
+      fetch(`https://the-lusaca-blog.herokuapp.com/tags/${this.$route.params.id}?page=${this.next_page}`)
         .then((response) => {
           return response.json();
         })
