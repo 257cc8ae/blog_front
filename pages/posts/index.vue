@@ -95,9 +95,16 @@ export default Vue.extend({
       next_page: null,
     };
   },
+  head() {
+    return {
+      title: "All Posts - The Lusaca Blog",
+    };
+  },
   methods: {
     loadPosts() {
-      fetch(`https://the-lusaca-blog.herokuapp.com/posts?page=${this.next_page}`)
+      fetch(
+        `https://the-lusaca-blog.herokuapp.com/posts?page=${this.next_page}`
+      )
         .then((response) => {
           return response.json();
         })
