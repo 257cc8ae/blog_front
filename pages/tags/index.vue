@@ -3,7 +3,9 @@
     <h1>All Tags</h1>
     <div v-if="tags != null">
       <div v-for="tag in tags" :key="tag.name" class="tag">
+        <nuxt-link :to="'/tags/' + tag.name">
         <h2>#{{ tag.name }}</h2>
+        </nuxt-link>
         <div class="des">
           {{ tag.descriptions }}
         </div>
@@ -72,7 +74,7 @@ export default {
   },
   methods: {
     loadTags() {
-      fetch(`https://the-lusaca-blog.herokuapp.com/tags?page=${this.next_page}`)
+      fetch(`http://localhost:3000/tags?page=${this.next_page}`)
         .then((response) => {
           return response.json();
         })
@@ -84,7 +86,7 @@ export default {
     },
   },
   created() {
-    fetch("https://the-lusaca-blog.herokuapp.com/tags")
+    fetch("http://localhost:3000/tags")
       .then((response) => {
         return response.json();
       })

@@ -12,7 +12,7 @@
           <nuxt-link to="/posts">
             <li>All Posts</li>
           </nuxt-link>
-          <nuxt-link to="/">
+          <nuxt-link to="/tags">
             <li>Tags</li>
           </nuxt-link>
           <nuxt-link to="/">
