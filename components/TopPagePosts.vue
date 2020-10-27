@@ -26,6 +26,9 @@
           </div>
         </div>
       </div>
+      <div v-else>
+        <div class="now_loading">Now Loading ...</div>
+      </div>
     </section>
   </div>
 </template>
@@ -75,6 +78,12 @@
     .post:last-child {
       border-bottom: none;
     }
+  }
+  .now_loading {
+    color: var(--sub-color);
+    font-family: var(--logo-font-family);
+    text-align: center;
+    font-weight: bold;
   }
 }
 </style>

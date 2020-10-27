@@ -9,6 +9,9 @@
         </div>
       </div>
     </div>
+    <div v-else>
+      <div class="now_loading">Now Loading ...</div>
+    </div>
     <div v-if="next_page != null">
       <button class="lmp" @click="loadTags()">Load More Posts</button>
     </div>
@@ -49,6 +52,12 @@
       font-family: var(--logo-font-family);
       color: var(--sub-color);
     }
+  }
+  .now_loading {
+    color: var(--sub-color);
+    font-family: var(--logo-font-family);
+    text-align: center;
+    font-weight: bold;
   }
 }
 </style>
