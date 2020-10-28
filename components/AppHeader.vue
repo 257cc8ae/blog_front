@@ -1,11 +1,11 @@
 <template>
   <header>
     <div class="header-main">
-      <button class="mobile-nav-btn" @click="nav()">
+      <button class="mobile-nav-btn">
         <ion-icon name="menu-outline"></ion-icon>
       </button>
       <Logo />
-      <nav>
+      <nav v-show="true">
         <ul>
           <nuxt-link to="/">
             <li>Home</li>
@@ -120,3 +120,16 @@ header {
   }
 }
 </style>
+
+<script>
+export default {
+  data() {
+    return {
+      show: true,
+    };
+  },
+  methods: {
+    nav() {},
+  },
+};
+</script>

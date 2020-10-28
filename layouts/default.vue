@@ -1,7 +1,9 @@
 <template>
   <div>
     <AppHeader />
+    <main>
     <Nuxt />
+    </main>
     <AppFooter />
   </div>
 </template>
@@ -21,6 +23,10 @@ body {
   margin: 0;
   background: #f9fafa;
   font-family: 'Inter',sans-serif;
+}
+
+main {
+  margin-top: 90px;
 }
 </style>
 
