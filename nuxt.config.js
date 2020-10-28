@@ -4,7 +4,7 @@ export default {
     port: 8000,
   },
   head: {
-    title: 'blog_front',
+    title: 'The Lusaca Blog',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -12,7 +12,8 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    ],
+    script: [{ src: "https://unpkg.com/ionicons/dist/ionicons.js", body: true }]
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)

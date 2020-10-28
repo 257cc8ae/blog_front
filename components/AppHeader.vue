@@ -1,5 +1,8 @@
 <template>
   <header>
+    <button class="mobile-nav-btn">
+      <ion-icon name="menu-outline"></ion-icon>
+    </button>
     <div class="header-main">
       <div class="logo-area">
         <span class="logo">The Lusaca Blog</span>
@@ -74,6 +77,36 @@ header {
             border-bottom: 2px solid var(--accent);
           }
         }
+      }
+    }
+  }
+  .mobile-nav-btn {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1020px) {
+  header {
+    display: flex;
+    .mobile-nav-btn {
+      display: block;
+      background: #fff;
+      color: #000;
+      flex: 0 0 auto;
+      border: none;
+      font-size: 20px;
+      line-height: 75px;
+      width: 69px;
+      height: 69px;
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .header-main {
+      flex: 0 0 auto;
+      nav {
+        display: none;
       }
     }
   }
