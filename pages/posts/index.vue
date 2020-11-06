@@ -7,16 +7,12 @@
           <div class="date">
             {{ post.date }}
           </div>
-          <nuxt-link :to="'/posts/' + post.name">
+          <nuxt-link :to="'/posts/' + post.name" class="title-link">
             <h2>
               {{ post.title }}
             </h2>
           </nuxt-link>
-          <div class="tags">
-            <span v-for="tag in post.tags" :key="tag[0]" class="tag">
-              #{{ tag }}
-            </span>
-          </div>
+          <TagsList :tags="post.tags"></TagsList>
         </div>
       </div>
     </div>
@@ -40,11 +36,12 @@
     border-bottom: var(--border-color) dashed 1px;
     display: inline-block;
     font-size: 48px;
+    margin-bottom: 15px;
   }
   .post {
     border-bottom: var(--border-color) dashed 1px;
     padding-bottom: 20px;
-    a {
+    .title-link {
       color: #000;
       text-decoration: none;
       &:hover {
@@ -61,14 +58,7 @@
       color: var(--sub-color);
       margin-top: 20px;
     }
-    .tags {
-      .tag {
-        color: var(--sub-color);
-        font-family: var(--logo-font-family);
-      }
-    }
   }
-
   .lmp {
     width: 100%;
     border-radius: 4px;
@@ -102,9 +92,7 @@ export default Vue.extend({
   },
   methods: {
     loadPosts() {
-      fetch(
-        `https://the-lusaca-blog.herokuapp.com/posts?page=${this.next_page}`
-      )
+      fetch(`http://localhost:3000/posts?page=${this.next_page}`)
         .then((response) => {
           return response.json();
         })
@@ -116,7 +104,7 @@ export default Vue.extend({
     },
   },
   created() {
-    fetch("https://the-lusaca-blog.herokuapp.com/posts")
+    fetch("http://localhost:3000/posts")
       .then((response) => {
         return response.json();
       })

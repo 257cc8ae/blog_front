@@ -45,11 +45,6 @@
       margin-top: 20px;
     }
 
-    .tags {
-      font-family: var(--logo-font-family);
-      color: var(--sub-color);
-    }
-
     h1 {
       font-size: 35px;
       margin: 10px 0;
@@ -140,7 +135,7 @@ export default {
     };
   },
   created() {
-    fetch(`https://the-lusaca-blog.herokuapp.com/posts/${this.$route.params.id}`)
+    fetch(`http://localhost:3000/posts/${this.$route.params.id}`)
       .then((response) => {
         return response.json();
       })

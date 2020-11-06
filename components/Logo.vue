@@ -6,6 +6,10 @@
 
 <style lang="scss">
 .logo-area {
+  flex: 0 0 auto;
+  width: max-content;
+  height: 69px;
+  margin-right: 20px;
   .logo {
     font-family: var(--logo-font-family);
     line-height: 69px;

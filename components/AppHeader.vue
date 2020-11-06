@@ -1,9 +1,7 @@
 <template>
   <header>
     <div class="header-main">
-      <button class="mobile-nav-btn">
-        <ion-icon name="menu-outline"></ion-icon>
-      </button>
+      <HamburgerButton />
       <Logo />
       <nav v-show="true">
         <ul>
@@ -41,12 +39,6 @@ header {
     margin-left: auto;
     display: flex;
   }
-  .logo-area {
-    flex: 0 0 auto;
-    width: max-content;
-    height: 69px;
-    padding: 0 20px;
-  }
   nav {
     flex: 0 0 auto;
     width: max-content;
@@ -71,9 +63,6 @@ header {
       }
     }
   }
-  .mobile-nav-btn {
-    display: none;
-  }
 }
 
 @media screen and (max-width: 1020px) {
@@ -82,18 +71,7 @@ header {
       margin: 0;
       display: flex;
 
-      .mobile-nav-btn {
-        flex: 0 0 auto;
-        display: block;
-        width: 69px;
-        height: 69px;
-        background: none;
-        border: none;
-        font-size: 20px;
-        &:focus {
-          outline: none;
-        }
-      }
+
 
       nav {
         display: none;

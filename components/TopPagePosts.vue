@@ -14,16 +14,12 @@
           <div class="date">
             {{ post.date }}
           </div>
-          <nuxt-link :to="'/posts/' + post.name">
+          <nuxt-link :to="'/posts/' + post.name" class="post-title">
             <h2>
               {{ post.title }}
             </h2>
           </nuxt-link>
-          <div class="tags">
-            <span v-for="tag in post.tags" :key="tag[0]" class="tag">
-              #{{ tag }}
-            </span>
-          </div>
+          <TagsList :tags="post.tags"></TagsList>
         </div>
       </div>
       <div v-else>
@@ -51,7 +47,7 @@
         width: 100%;
         border-radius: 4px;
       }
-      a {
+      .post-title {
         color: #000;
         text-decoration: none;
         &:hover {
@@ -67,12 +63,6 @@
         font-family: var(--logo-font-family);
         color: var(--sub-color);
         margin-top: 20px;
-      }
-      .tags {
-        .tag {
-          color: var(--sub-color);
-          font-family: var(--logo-font-family);
-        }
       }
     }
     .post:last-child {
@@ -97,7 +87,7 @@ export default Vue.extend({
     };
   },
   created() {
-    fetch("https://the-lusaca-blog.herokuapp.com")
+    fetch("http://localhost:3000")
       .then((response) => {
         return response.json();
       })

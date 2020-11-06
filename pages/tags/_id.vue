@@ -13,11 +13,7 @@
               {{ post.title }}
             </h2>
           </nuxt-link>
-          <div class="tags">
-            <span v-for="tag in post.tags.split(' ')" :key="tag[0]" class="tag">
-              #{{ tag }}
-            </span>
-          </div>
+          <TagsList :tags="post.tags.split(' ')"></TagsList>
         </div>
       </div>
     </div>
@@ -43,7 +39,7 @@ export default {
     };
   },
   created() {
-    fetch(`https://the-lusaca-blog.herokuapp.com/tags/${this.$route.params.id}`)
+    fetch(`http://localhost:3000/tags/${this.$route.params.id}`)
       .then((response) => {
         return response.json();
       })
@@ -59,7 +55,7 @@ export default {
   },
   methods: {
     loadPosts() {
-      fetch(`https://the-lusaca-blog.herokuapp.com/tags/${this.$route.params.id}?page=${this.next_page}`)
+      fetch(`http://localhost:3000/tags/${this.$route.params.id}?page=${this.next_page}`)
         .then((response) => {
           return response.json();
         })
@@ -118,12 +114,6 @@ export default {
       font-family: var(--logo-font-family);
       color: var(--sub-color);
       margin-top: 20px;
-    }
-    .tags {
-      .tag {
-        color: var(--sub-color);
-        font-family: var(--logo-font-family);
-      }
     }
   }
   .lmp {
