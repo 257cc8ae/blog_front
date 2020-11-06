@@ -1,12 +1,12 @@
 <template>
-  <button class="mobile-nav-btn">
+  <button class="mobile-nav-btn" @click="nav()">
     <ion-icon name="menu-outline"></ion-icon>
   </button>
 </template>
 
 <style lang="scss">
 .mobile-nav-btn {
-    display: none;
+  display: none;
 }
 @media screen and (max-width: 1020px) {
   .mobile-nav-btn {
@@ -25,5 +25,10 @@
 </style>
 
 <script>
-export default {};
+export default {
+  props: ["navShow"],
+  methods: {
+    nav() {},
+  },
+};
 </script>
