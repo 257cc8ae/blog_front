@@ -135,7 +135,7 @@ export default {
     };
   },
   created() {
-    fetch(`http://localhost:3000/posts/${this.$route.params.id}`)
+    fetch(`https://the-lusaca-blog.herokuapp.com/posts/${this.$route.params.id}`)
       .then((response) => {
         return response.json();
       })

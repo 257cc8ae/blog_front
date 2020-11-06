@@ -28,7 +28,9 @@
 export default {
   props: ["navShow"],
   methods: {
-    nav() {},
+    nav() {
+      this.$emit("navBtnClick");
+    },
   },
 };
 </script>

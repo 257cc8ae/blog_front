@@ -1,5 +1,5 @@
 <template>
-  <nav v-show="navShow">
+  <nav v-show="navShow" @click="navClickEve()">
     <ul>
       <nuxt-link to="/">
         <li>Home</li>
@@ -15,7 +15,6 @@
       </nuxt-link>
     </ul>
   </nav>
-  
 </template>
 
 <style lang="scss">
@@ -46,7 +45,6 @@ nav {
 
 @media screen and (max-width: 1020px) {
   nav {
-    display: none;
     position: fixed;
     top: 70px;
     left: 0;
@@ -71,6 +69,11 @@ nav {
 
 <script lang="ts">
 export default {
-    props: ["navShow"],
+  props: ["navShow"],
+  methods: {
+    navClickEve() {
+      this.$emit("navLinksClick");
+    },
+  },
 };
 </script>

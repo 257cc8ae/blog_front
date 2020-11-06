@@ -1,9 +1,9 @@
 <template>
   <header>
     <div class="header-main">
-      <HamburgerButton />
+      <HamburgerButton :navShow="navShow" @navBtnClick="navShowOrHide()" />
       <Logo />
-      <AppNav :navShow="navShow"></AppNav>
+      <AppNav :navShow="navShow" @navLinksClick="navLinkClick()"></AppNav>
     </div>
   </header>
 </template>
@@ -40,13 +40,37 @@ header {
 export default {
   data() {
     return {
-      navShow: true,
+      navShow: false,
     };
   },
   created() {
     if (process.client && window.innerWidth <= 1020) {
       this.navShow = false;
+    } else {
+      this.navShow = true;
     }
+  },
+  methods: {
+    navShowOrHide() {
+      if (
+        process.client &&
+        window.innerWidth <= 1020 &&
+        this.navShow === false
+      ) {
+        this.navShow = true;
+      } else if (
+        process.client &&
+        window.innerWidth <= 1020 &&
+        this.navShow === true
+      ) {
+        this.navShow = false;
+      }
+    },
+    navLinkClick() {
+      if (process.client && window.innerWidth <= 1020) {
+        this.navShow = false;
+      };
+    },
   },
 };
 </script>
