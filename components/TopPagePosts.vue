@@ -23,7 +23,7 @@
         </div>
       </div>
       <div v-else>
-        <div class="now_loading">Now Loading ...</div>
+        <Loading />
       </div>
     </section>
   </div>

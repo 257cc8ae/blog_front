@@ -4,7 +4,7 @@
     <div v-if="tags != null">
       <div v-for="tag in tags" :key="tag.name" class="tag">
         <nuxt-link :to="'/tags/' + tag.name">
-        <h2>#{{ tag.name }}</h2>
+          <h2>#{{ tag.name }}</h2>
         </nuxt-link>
         <div class="des">
           {{ tag.descriptions }}
@@ -12,7 +12,7 @@
       </div>
     </div>
     <div v-else>
-      <div class="now_loading">Now Loading ...</div>
+      <Loading />
     </div>
     <div v-if="next_page != null">
       <button class="lmp" @click="loadTags()">Load More Posts</button>
