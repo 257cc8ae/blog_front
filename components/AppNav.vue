@@ -72,7 +72,7 @@ export default {
   props: ["navShow"],
   methods: {
     navClickEve() {
-      this.$emit("navLinksClick");
+      // this.$emit("navLinksClick");
     },
   },
 };
