@@ -67,12 +67,12 @@ nav {
 }
 </style>
 
-<script lang="ts">
+<script>
 export default {
   props: ["navShow"],
   methods: {
     navClickEve() {
-      // this.$emit("navLinksClick");
+      this.navShow = false;
     },
   },
 };
