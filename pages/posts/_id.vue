@@ -19,6 +19,9 @@
         </div>
         <p v-html="post.content" class="markdown"></p>
       </div>
+      <div v-else>
+        <Loading />
+      </div>
     </section>
   </div>
 </template>
@@ -135,7 +138,9 @@ export default {
     };
   },
   created() {
-    fetch(`https://the-lusaca-blog.herokuapp.com/posts/${this.$route.params.id}`)
+    fetch(
+      `https://the-lusaca-blog.herokuapp.com/posts/${this.$route.params.id}`
+    )
       .then((response) => {
         return response.json();
       })

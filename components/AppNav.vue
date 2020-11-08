@@ -72,7 +72,9 @@ export default {
   props: ["navShow"],
   methods: {
     navClickEve() {
-      this.navShow = false;
+      if (process.client && window.innerWidth <= 1020) {
+        this.navShow = false;
+      };
     },
   },
 };

@@ -26,6 +26,9 @@
         <Loading />
       </div>
     </section>
+    <section class="top-page-search-area">
+      <SearchForm />
+    </section>
   </div>
 </template>
 
@@ -75,6 +78,16 @@
     text-align: center;
     font-weight: bold;
   }
+}
+.top-page-search-area {
+  width: calc(100% - 40px);
+  max-width: 1020px;
+  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #ffffff;
+  margin-top: 20px;
+  border-radius: 4px;
 }
 </style>
 
