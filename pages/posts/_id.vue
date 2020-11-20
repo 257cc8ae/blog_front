@@ -139,7 +139,7 @@ export default {
   },
   created() {
     fetch(
-      `https://the-lusaca-blog.herokuapp.com/posts/${this.$route.params.id}`
+      `http://localhost:3000/posts/${this.$route.params.id}`
     )
       .then((response) => {
         return response.json();

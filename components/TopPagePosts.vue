@@ -100,7 +100,7 @@ export default Vue.extend({
     };
   },
   created() {
-    fetch("https://the-lusaca-blog.herokuapp.com")
+    fetch("http://localhost:3000")
       .then((response) => {
         return response.json();
       })
