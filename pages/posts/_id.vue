@@ -137,6 +137,11 @@ export default {
       post: null,
     };
   },
+  head() {
+    return {
+      title: `${this.post.title} - The Lusaca Blog`,
+    };
+  },
   created() {
     fetch(
       `http://localhost:3000/posts/${this.$route.params.id}`
