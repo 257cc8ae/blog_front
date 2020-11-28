@@ -1,3 +1,5 @@
+const environment = process.env.NODE_ENV
+const envSettings = require(`./env.${environment}.js`)
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   server: {
@@ -44,5 +46,6 @@ export default {
     config: {
       ignoredElements: [/^ion-/]
     }
-  }
+  },
+  env: envSettings,
 }
